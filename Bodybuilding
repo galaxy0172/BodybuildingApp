@@ -2,7 +2,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Full 2-month bodybuilding + deadly fighting plan with interactive details
 plan = {
     "Month 1": [
         {"Day": 1, "Focus": "Chest + Triceps", "Workout": "Bench press, Push-ups, Dumbbell Fly", "Fighting": "Straight punch combos", "Tips": "Focus on speed and accuracy."},
@@ -24,7 +23,6 @@ plan = {
     ]
 }
 
-# Home page route
 @app.route("/")
 def home():
     return render_template("index.html", plan=plan)
