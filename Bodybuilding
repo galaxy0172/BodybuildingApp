@@ -1,0 +1,33 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Full 2-month bodybuilding + deadly fighting plan with interactive details
+plan = {
+    "Month 1": [
+        {"Day": 1, "Focus": "Chest + Triceps", "Workout": "Bench press, Push-ups, Dumbbell Fly", "Fighting": "Straight punch combos", "Tips": "Focus on speed and accuracy."},
+        {"Day": 2, "Focus": "Back + Biceps", "Workout": "Pull-ups, Rows, Bicep curls", "Fighting": "Elbow strike drills", "Tips": "Close-range power, maintain balance."},
+        {"Day": 3, "Focus": "Legs + Core", "Workout": "Squats, Lunges, Plank", "Fighting": "Low sweep kick + Shadow jab", "Tips": "Work footwork and flexibility."},
+        {"Day": 4, "Focus": "Shoulders + Abs", "Workout": "Shoulder press, Side raises, Crunches", "Fighting": "Uppercut + hook combo", "Tips": "Master technique before speed."},
+        {"Day": 5, "Focus": "Full body HIIT", "Workout": "Burpees, Push-ups, Squats", "Fighting": "Shadow fighting: speed combos", "Tips": "Focus on endurance and flow."},
+        {"Day": 6, "Focus": "Rest", "Workout": "Stretching, light cardio", "Fighting": "Meditation + reaction drills", "Tips": "Recovery and mental focus."},
+        {"Day": 7, "Focus": "Sparring/Shadow fight", "Workout": "-", "Fighting": "Light sparring: jab + cross + hook combos", "Tips": "Controlled sparring to refine combos."}
+    ],
+    "Month 2": [
+        {"Day": 1, "Focus": "Chest + Triceps", "Workout": "Incline bench, Dips, Push-ups", "Fighting": "Killer cross punch + jab feints", "Tips": "Fake jab then strong cross punch."},
+        {"Day": 2, "Focus": "Back + Biceps", "Workout": "Deadlifts, Pull-ups, Hammer curls", "Fighting": "Backfist + counter attacks", "Tips": "Use reaction speed and counters."},
+        {"Day": 3, "Focus": "Legs + Core", "Workout": "Jump squats, Leg press, Leg raises", "Fighting": "Roundhouse + low sweep kick", "Tips": "Explosive leg power and balance."},
+        {"Day": 4, "Focus": "Shoulders + Abs", "Workout": "Military press, Arnold press, Russian twists", "Fighting": "Spinning elbow + knee strike", "Tips": "Practice rotation and timing."},
+        {"Day": 5, "Focus": "Full body HIIT", "Workout": "Push-ups, Burpees, Lunges", "Fighting": "Shadow fighting with power combos", "Tips": "Blend punches, kicks, elbows."},
+        {"Day": 6, "Focus": "Rest", "Workout": "Yoga stretch, light jog", "Fighting": "Reaction + speed drills", "Tips": "Active recovery improves reflexes."},
+        {"Day": 7, "Focus": "Sparring/Shadow fight", "Workout": "-", "Fighting": "Full sparring: advanced combos and killer moves", "Tips": "Combine all techniques safely."}
+    ]
+}
+
+# Home page route
+@app.route("/")
+def home():
+    return render_template("index.html", plan=plan)
+
+if __name__ == "__main__":
+    app.run(debug=True)
